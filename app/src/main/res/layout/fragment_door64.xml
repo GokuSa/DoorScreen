@@ -1,0 +1,256 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:marquee="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="shine.com.doorscreen.fragment.DoorFragment">
+    <!--标题视图-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="85px"
+        android:background="@drawable/bg_title">
+
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16px"
+            tools:src="@mipmap/ic_launcher"/>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:layout_marginTop="-12px"
+            android:includeFontPadding="false"
+            android:textColor="@android:color/white"
+            android:textSize="88px"
+            android:textStyle="bold"
+            tools:text="206"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16px"
+            >
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="28px"
+                tools:text="2016-5-4"/>
+
+            <TextView
+                android:id="@+id/tv_weekday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_date"
+                android:textColor="@android:color/white"
+                android:textSize="20px"
+                tools:text="week3"/>
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@id/tv_date"
+                android:layout_alignRight="@id/tv_date"
+                android:layout_below="@id/tv_date"
+                android:textColor="@android:color/white"
+                android:textSize="20px"
+                tools:text="week3"/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+    <!--主要视图-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_background_main"
+        android:paddingLeft="16px"
+        android:paddingRight="16px"
+        android:paddingTop="8px">
+        <!--底部跑马灯-->
+        <include
+            android:id="@+id/fl"
+            layout="@layout/layout_bottom"/>
+        <!--输液提醒 和 医生信息 通过ViewSwitcher切换-->
+        <LinearLayout
+            android:id="@+id/ll_drip_doctor"
+            android:layout_width="866px"
+            android:layout_height="446px"
+            android:background="@drawable/bg_main_stroke"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_info"
+                android:layout_width="match_parent"
+                android:layout_height="56px"
+                android:background="@drawable/bg_info_title"
+                android:gravity="center"
+                android:textColor="@color/color_background_main"
+                android:textSize="28px"
+                android:textStyle="bold"
+                tools:text="@string/drip_info"/>
+
+            <ViewSwitcher
+                android:id="@+id/viewSwitchDripAndDoctor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inAnimation="@anim/window_dial_pad_in"
+                android:outAnimation="@anim/window_dial_pad_out"
+                >
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_drip"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="6px"
+                    android:paddingRight="6px"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_doctor"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="6px"
+                    android:paddingRight="6px"
+                    />
+
+            </ViewSwitcher>
+        </LinearLayout>
+        <!--呼叫视图 和 探望时间视图-->
+        <ViewSwitcher
+            android:id="@+id/viewSwitchCallAndVisit"
+            android:layout_width="866px"
+            android:layout_height="156px"
+            android:layout_above="@id/fl"
+            android:layout_below="@id/ll_drip_doctor"
+            android:background="@drawable/bg_call_visit">
+            <LinearLayout
+                android:id="@+id/ll_visit_info"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="138px"
+                    android:layout_height="138px"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="6px"
+                    android:layout_marginRight="6px"
+                    android:background="@drawable/bg_visit"/>
+
+                <View
+                    android:layout_width="1px"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/black"/>
+
+                <TextView
+                    android:id="@+id/tv_visit_period_one"
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:lineSpacingMultiplier="1.5"
+                    android:textSize="@dimen/visit_text_size"
+                    android:textStyle="bold"
+                    tools:text="上午\n8:00-12:00"/>
+
+                <TextView
+                    android:id="@+id/tv_visit_period_two"
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:lineSpacingMultiplier="1.5"
+                    android:textSize="@dimen/visit_text_size"
+                    android:textStyle="bold"
+                    tools:text="上午\n8:00-12:00"/>
+
+                <TextView
+                    android:id="@+id/tv_visit_period_three"
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:lineSpacingMultiplier="1.5"
+                    android:textSize="@dimen/visit_text_size"
+                    android:textStyle="bold"
+                    tools:text="上午\n8:00-12:00"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_call_info"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="138px"
+                    android:layout_height="138px"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="6px"
+                    android:layout_marginRight="6px"
+                    android:background="@drawable/bg_patient_call"/>
+
+                <View
+                    android:layout_width="1px"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="4px"
+                    android:background="@android:color/black"/>
+
+                <TextView
+                    android:id="@+id/tv_patient_call"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textColor="#ea7b03"
+                    android:textSize="@dimen/visit_text_size"
+                    android:textStyle="bold"
+                    tools:text="1101床正在呼叫......"/>
+
+
+            </LinearLayout>
+
+
+        </ViewSwitcher>
+        <!--病人信息-->
+        <LinearLayout
+            android:layout_width="426px"
+            android:layout_height="606px"
+            android:layout_above="@id/fl"
+            android:layout_alignTop="@id/ll_drip_doctor"
+            android:layout_marginLeft="30px"
+            android:layout_toEndOf="@id/ll_drip_doctor"
+            android:layout_toRightOf="@id/ll_drip_doctor"
+            android:background="@drawable/bg_paient_list"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="56px"
+                android:background="@drawable/bg_paient_title"
+                android:gravity="center"
+                android:text="住 院 信 息"
+                android:textColor="@color/color_background_main"
+                android:textSize="28px"
+                android:textStyle="bold"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_patient_info"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="4px"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

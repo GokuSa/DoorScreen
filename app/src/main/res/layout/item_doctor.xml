@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="266px"
+    android:layout_height="346px"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/bg_general"
+    android:gravity="center_horizontal"
+    android:padding="16px"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/tv_doctor_title"
+        android:layout_width="198px"
+        android:layout_height="64px"
+        android:background="@drawable/selector_drip_doctor"
+        android:gravity="center"
+        tools:text="主治医生"
+        android:textColor="@android:color/white"
+        android:textSize="32px"/>
+    <ImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="128px"
+        android:layout_height="206px"
+        tools:src="@mipmap/ic_launcher"/>
+    <TextView
+        android:id="@+id/tv_name"
+        tools:text="李医生"
+        android:textSize="28px"
+        android:textColor="@color/color_background_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

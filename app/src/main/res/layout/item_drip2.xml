@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="236dp"
+    android:layout_height="346dp"
+    android:padding="8dp"
+    >
+
+    <TextView
+        android:id="@+id/tv_drip_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/selector_drip_doctor"
+        android:gravity="center"
+        tools:text="1101床"
+        android:textColor="@android:color/white"
+        android:textSize="32sp"
+        />
+
+    <TextView
+        android:id="@+id/tv_time_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_drip_title"
+        android:text="预计\n剩余"
+        android:textSize="26sp"
+        />
+
+    <LinearLayout
+        android:id="@+id/ll_time_board"
+        android:layout_width="wrap_content"
+        android:layout_height="62dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/tv_drip_title"
+        android:background="@drawable/bg_timer_blue"
+        android:padding="6dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <TextSwitcher
+            android:id="@+id/textSwitchLeft"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:inAnimation="@anim/window_dial_pad_in"
+            android:outAnimation="@anim/window_dial_pad_out"
+            android:layout_weight="1"
+            />
+
+        <TextSwitcher
+            android:id="@+id/textSwitchMiddle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:inAnimation="@anim/window_dial_pad_in"
+            android:outAnimation="@anim/window_dial_pad_out"
+            />
+
+        <TextSwitcher
+            android:id="@+id/textSwitchRight"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:inAnimation="@anim/window_dial_pad_in"
+            android:outAnimation="@anim/window_dial_pad_out"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="分\n钟"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_drip_package"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_time_left"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/drip_package_full"/>
+
+    <ImageView
+        android:id="@+id/iv_water_drip"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_below="@id/iv_drip_package"
+        android:layout_marginLeft="16dp"
+        android:src="@drawable/water_drop"/>
+
+    <TextView
+        android:id="@+id/tv_drip_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+
+        android:layout_below="@id/tv_time_left"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:lineSpacingMultiplier="1.5"
+        android:text="开始时间\n07:00\n60滴/分钟"
+        android:textSize="28sp"/>
+</RelativeLayout>

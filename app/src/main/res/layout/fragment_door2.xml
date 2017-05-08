@@ -1,0 +1,257 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:marquee="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="shine.com.doorscreen.fragment.DoorFragment">
+    <!--标题视图-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_title">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:src="@mipmap/ic_launcher"/>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="32sp"
+            tools:text="血液科"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            >
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="28sp"
+                tools:text="2016-5-4"/>
+
+            <TextView
+                android:id="@+id/tv_weekday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_date"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                tools:text="week3"/>
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@id/tv_date"
+                android:layout_alignRight="@id/tv_date"
+                android:layout_below="@id/tv_date"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                tools:text="week3"/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+    <!--主要视图-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_background_main"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:paddingTop="12dp">
+        <!--底部跑马灯-->
+        <include
+            android:id="@+id/fl"
+            layout="@layout/layout_bottom"/>
+        <!--呼叫视图 和 探望时间视图-->
+        <ViewSwitcher
+            android:id="@+id/viewSwitchCallAndVisit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_call_visit">
+
+            <TextView
+                android:id="@+id/tv_paient_room"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:gravity="center"
+                android:text="1 0 1 6 病 房"
+                android:textColor="@color/color_background_main"
+                android:drawableLeft="@drawable/iv_paient_room"
+                android:paddingLeft="32dp"
+                android:textSize="60sp"/>
+            <!-- <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:orientation="horizontal">
+
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_gravity="center"
+                     android:layout_marginLeft="6dp"
+                     android:layout_marginRight="6dp"
+                     android:background="@drawable/bg_visit"/>
+
+                 <View
+                     android:layout_width="1dp"
+                     android:layout_height="match_parent"
+                     android:background="@android:color/black"
+                     android:layout_marginBottom="4dp"/>
+
+                 <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:gravity="center"
+                     android:text="1101床正在呼叫......"
+                     android:textColor="#ea7b03"
+                     android:textSize="32sp"
+                     android:textStyle="bold"/>
+
+
+             </LinearLayout>-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp"
+                    android:background="@drawable/bg_visit"/>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/black"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:lineSpacingMultiplier="1.5"
+                    android:text="上午\n8:00-12:00"
+                    android:textSize="32sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:lineSpacingMultiplier="1.5"
+                    android:text="上午\n8:00-12:00"
+                    android:textSize="32sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:lineSpacingMultiplier="1.5"
+                    android:text="上午\n8:00-12:00"
+                    android:textSize="32sp"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+        </ViewSwitcher>
+        <!--输液提醒 和 医生信息 通过ViewSwitcher切换-->
+        <LinearLayout
+            android:id="@+id/ll_drip_doctor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/fl"
+            android:layout_below="@id/viewSwitchCallAndVisit"
+            android:background="@drawable/bg_call_visit"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="---输 液 提 醒---"
+                android:padding="16dp"
+                android:textColor="@color/color_background_main"
+                android:textSize="36sp"
+                android:textStyle="bold"/>
+
+            <ViewSwitcher
+                android:id="@+id/viewSwitchDripAndDoctor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inAnimation="@anim/window_dial_pad_in"
+                android:outAnimation="@anim/window_dial_pad_out"
+                >
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_drip"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_doctor"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    />
+
+            </ViewSwitcher>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/fl"
+            android:layout_alignTop="@id/viewSwitchCallAndVisit"
+            android:layout_marginLeft="24dp"
+            android:layout_toEndOf="@id/ll_drip_doctor"
+            android:layout_toRightOf="@id/ll_drip_doctor"
+            android:background="@drawable/bg_paient_list"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="--住 院 信 息--"
+                android:layout_gravity="center_horizontal"
+                android:padding="16dp"
+                android:textColor="@color/color_background_main"
+                android:textSize="32sp"
+                android:textStyle="bold"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_patient_info"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

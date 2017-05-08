@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingLeft="8px"
+    android:paddingRight="8px"
+    android:paddingTop="8px"
+    android:paddingBottom="14px"
+    android:orientation="horizontal">
+    <TextView
+        android:id="@+id/tv_bedroom_number"
+        android:layout_width="144px"
+        android:layout_height="144px"
+        android:background="@drawable/bg_paient_bedroom"
+        android:textColor="@android:color/white"
+        android:textSize="48px"
+        android:gravity="center"
+        tools:text="1101\n床"/>
+    <TextView
+        android:id="@+id/tv_patient_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:textColor="@color/color_orange"
+        android:layout_marginLeft="16px"
+        android:layout_gravity="center_vertical"
+        android:textSize="42px"
+        tools:text="正在呼叫"/>
+</LinearLayout>

@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">DoorScreen</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txt">%s</string>
+    <string name="drip_info">输 液 提 醒</string>
+    <string name="doctor_info">医 生 信 息</string>
+    <string name="long_red">7E1001000000000000000000000000010103000012AA</string>
+    <string name="long_blue">7E1001000000000000000000000000010203000011AA</string>
+    <string name="long_green">7E1001000000000000000000000000010303000010AA</string>
+    <string name="long_orange">7E1001000000000000000000000000010403000017AA</string>
+
+    <string name="flash_red">7E1001000000000000000000000000010102010012AA</string>
+    <string name="flash_blue">7E1001000000000000000000000000010202010011AA</string>
+    <string name="flash_green">7E1001000000000000000000000000010302010010AA</string>
+    <string name="slow_flash_red">7E1001000000000000000000000000010102020011AA</string>
+    <string name="slow_flash_blue">7E1001000000000000000000000000010202020012AA</string>
+    <string name="slow_flash_green">7E1001000000000000000000000000010302020013AA</string>
+    <string name="light_off">7E1001000000000000000000000000010001000011AA</string>
+
+</resources>

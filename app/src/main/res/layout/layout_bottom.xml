@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:marquee="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:background="@drawable/bg_marquee"
+    tools:showIn="@layout/fragment_door">
+
+    <shine.com.doorscreen.customview.MarqueeView
+        android:id="@+id/marqueeView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        marquee:autoStart="false"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        marquee:pause="700"
+        marquee:speed="10">
+
+        <TextView
+            android:id="@+id/tv_marquee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            tools:text="神州视翰 神州视翰 神州视翰 神州视翰 神州视翰 神州视翰 神州视翰"
+            android:textColor="@android:color/white"
+            android:textSize="28px"
+            />
+
+    </shine.com.doorscreen.customview.MarqueeView>
+</FrameLayout>
